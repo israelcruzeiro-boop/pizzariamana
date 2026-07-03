@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <a class="skip-link" href="#cardapio">Pular para o cardápio</a>
+    <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
 
     <header class="site-header" aria-label="Cabeçalho">
       <a class="brand" href="#inicio" aria-label="Pizzaria Maná">
@@ -26,7 +26,7 @@
         <span>Pizzaria Maná</span>
       </a>
       <nav class="main-nav" aria-label="Navegação">
-        <a href="#cardapio">Cardápio</a>
+        <button type="button" data-menu-open>Cardápio</button>
         <a href="#borda-vulcao">Borda vulcão</a>
         <a href="#fotos">Fotos reais</a>
         <a href="#pedido">Pedir agora</a>
@@ -53,7 +53,7 @@
               <a class="btn btn-primary" href="https://wa.me/5561991119476?text=Oi%2C%20Marcos%21%20Quero%20pedir%20uma%20pizza%20da%20Pizzaria%20Man%C3%A1." target="_blank" rel="noopener">
                 Pedir pelo WhatsApp
               </a>
-              <a class="btn btn-secondary" href="#cardapio">Ver sabores</a>
+              <button class="btn btn-secondary" type="button" data-menu-open>Ver cardápio</button>
             </div>
           </div>
         </div>
@@ -82,50 +82,6 @@
         <figure class="visual-story-side reveal">
           <img src="Imagens/montagem-sabores-reais.jpg" alt="Composição com pizzas salgadas e doces reais da Pizzaria Maná">
         </figure>
-      </section>
-
-      <section class="section menu-section" id="cardapio" aria-labelledby="menu-title">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-kicker">Cardápio</span>
-            <h2 id="menu-title">Escolha sua pizza</h2>
-          </div>
-          <p>Sabores salgados e doces com valores claros para pedir rápido.</p>
-        </div>
-
-        <div class="menu-grid">
-          <article class="menu-card reveal">
-            <div class="menu-card-head">
-              <span>Pizzas salgadas</span>
-              <small>a partir de R$ 37,90</small>
-            </div>
-            <ul class="price-list">
-              <li><span>Calabresa</span><strong>R$ 49,90</strong></li>
-              <li><span>Mussarela</span><strong>R$ 37,90</strong></li>
-              <li><span>Pomodoro</span><strong>R$ 41,90</strong></li>
-              <li><span>Portuguesa</span><strong>R$ 54,90</strong></li>
-              <li><span>Marguerita</span><strong>R$ 41,90</strong></li>
-              <li><span>Milho</span><strong>R$ 41,90</strong></li>
-              <li><span>Presunto</span><strong>R$ 44,90</strong></li>
-              <li><span>Pepperoni</span><strong>R$ 49,90</strong></li>
-              <li><span>Frango com Catupiry</span><strong>R$ 54,90</strong></li>
-            </ul>
-          </article>
-
-          <article class="menu-card sweet reveal">
-            <div class="menu-card-head">
-              <span>Pizzas doces</span>
-              <small>a partir de R$ 39,90</small>
-            </div>
-            <ul class="price-list">
-              <li><span>Chocolate</span><strong>R$ 41,90</strong></li>
-              <li><span>Banana e Chocolate</span><strong>R$ 44,90</strong></li>
-              <li><span>Banana com Canela</span><strong>R$ 39,90</strong></li>
-              <li><span>Banana Nevada</span><strong>R$ 49,90</strong></li>
-              <li><span>Romeu e Julieta</span><strong>R$ 44,90</strong></li>
-            </ul>
-          </article>
-        </div>
       </section>
 
       <section class="feature" id="borda-vulcao" aria-labelledby="volcano-title">
@@ -241,7 +197,7 @@
           <p>Pizza artesanal feita por Marcos Gomes de Souza, com massa dourada, recheio generoso e atendimento direto pelo WhatsApp.</p>
         </div>
         <nav class="footer-nav" aria-label="Links do rodapé">
-          <a href="#cardapio">Cardápio</a>
+          <button type="button" data-menu-open>Cardápio</button>
           <a href="#borda-vulcao">Borda vulcão</a>
           <a href="#fotos">Fotos reais</a>
           <a href="#pedido">Pedir agora</a>
@@ -256,6 +212,86 @@
         <span>Feita para vender pizza de verdade.</span>
       </div>
     </footer>
+
+    <div class="menu-modal" id="menu-modal" aria-hidden="true">
+      <div class="menu-backdrop" data-menu-close></div>
+      <section
+        class="menu-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="menu-modal-title"
+        aria-describedby="menu-modal-description"
+        tabindex="-1"
+      >
+        <button class="menu-close" type="button" data-menu-close aria-label="Fechar cardápio">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="menu-showcase">
+          <img src="Imagens/montagem-sabores-reais.jpg" alt="Pizzas reais da Pizzaria Maná">
+        </div>
+        <div class="menu-content">
+          <div class="menu-title-block">
+            <span class="section-kicker">Cardápio especial</span>
+            <h2 id="menu-modal-title">Escolha sua pizza da Maná</h2>
+            <p id="menu-modal-description">
+              Sabores salgados, doces e borda vulcão com atendimento direto pelo WhatsApp.
+            </p>
+          </div>
+
+          <div class="menu-modal-grid">
+            <article class="menu-card">
+              <div class="menu-card-head">
+                <span>Pizzas salgadas</span>
+                <small>a partir de R$ 37,90</small>
+              </div>
+              <ul class="price-list">
+                <li><span>Calabresa</span><strong>R$ 49,90</strong></li>
+                <li><span>Mussarela</span><strong>R$ 37,90</strong></li>
+                <li><span>Pomodoro</span><strong>R$ 41,90</strong></li>
+                <li><span>Portuguesa</span><strong>R$ 54,90</strong></li>
+                <li><span>Marguerita</span><strong>R$ 41,90</strong></li>
+                <li><span>Milho</span><strong>R$ 41,90</strong></li>
+                <li><span>Presunto</span><strong>R$ 44,90</strong></li>
+                <li><span>Pepperoni</span><strong>R$ 49,90</strong></li>
+                <li><span>Frango com Catupiry</span><strong>R$ 54,90</strong></li>
+              </ul>
+            </article>
+
+            <article class="menu-card sweet">
+              <div class="menu-card-head">
+                <span>Pizzas doces</span>
+                <small>a partir de R$ 39,90</small>
+              </div>
+              <ul class="price-list">
+                <li><span>Chocolate</span><strong>R$ 41,90</strong></li>
+                <li><span>Banana e Chocolate</span><strong>R$ 44,90</strong></li>
+                <li><span>Banana com Canela</span><strong>R$ 39,90</strong></li>
+                <li><span>Banana Nevada</span><strong>R$ 49,90</strong></li>
+                <li><span>Romeu e Julieta</span><strong>R$ 44,90</strong></li>
+              </ul>
+            </article>
+
+            <article class="menu-card border-special">
+              <div class="menu-card-head">
+                <span>Borda vulcão</span>
+                <small>extra especial</small>
+              </div>
+              <ul class="price-list">
+                <li><span>Catupiry</span><strong>+R$ 10,00</strong></li>
+                <li><span>Doce de Leite</span><strong>+R$ 10,00</strong></li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="menu-modal-actions">
+            <a class="btn btn-primary" href="https://wa.me/5561991119476?text=Oi%2C%20Marcos%21%20Vi%20o%20card%C3%A1pio%20e%20quero%20pedir%20uma%20pizza%20da%20Pizzaria%20Man%C3%A1." target="_blank" rel="noopener">
+              Pedir pelo WhatsApp
+            </a>
+            <span>61 99111-9476</span>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <a
       class="whatsapp-float"

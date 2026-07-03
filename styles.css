@@ -55,6 +55,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+}
+
 :focus-visible {
   outline: 3px solid var(--gold-2);
   outline-offset: 4px;
@@ -117,20 +121,25 @@ a {
 }
 
 .main-nav a,
+.main-nav button,
 .header-cta {
   min-height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0 12px;
+  border: 0;
   border-radius: var(--radius);
+  background: transparent;
   color: rgba(255, 250, 242, 0.86);
   font-size: 0.9rem;
   font-weight: 700;
+  cursor: pointer;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .main-nav a:hover,
+.main-nav button:hover,
 .header-cta:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
@@ -236,6 +245,8 @@ h1 {
   padding: 0 18px;
   border: 1px solid transparent;
   border-radius: var(--radius);
+  cursor: pointer;
+  font-family: inherit;
   font-weight: 800;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
@@ -433,6 +444,10 @@ h1 {
   color: #ffb1a1;
 }
 
+.border-special .menu-card-head span {
+  color: #8ef0ad;
+}
+
 .price-list {
   display: grid;
   gap: 0;
@@ -613,6 +628,165 @@ h1 {
   color: rgba(255, 250, 242, 0.72);
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
+.menu-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: none;
+  padding: 24px;
+  color: var(--ink);
+}
+
+.menu-modal.is-open {
+  display: grid;
+  place-items: center;
+}
+
+.menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 7, 5, 0.76);
+  backdrop-filter: blur(10px);
+}
+
+.menu-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.58fr) minmax(0, 1fr);
+  width: min(100%, 1120px);
+  max-height: min(92svh, 880px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 208, 114, 0.42);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.52);
+}
+
+.menu-showcase {
+  position: relative;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+.menu-showcase::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17, 16, 13, 0), rgba(17, 16, 13, 0.82)),
+    linear-gradient(90deg, rgba(17, 16, 13, 0.22), rgba(17, 16, 13, 0));
+}
+
+.menu-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-content {
+  max-height: min(92svh, 880px);
+  overflow-y: auto;
+  padding: 34px;
+}
+
+.menu-title-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 22px;
+}
+
+.menu-title-block .section-kicker {
+  color: var(--red);
+}
+
+.menu-title-block h2 {
+  max-width: 620px;
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+}
+
+.menu-title-block p {
+  max-width: 640px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.menu-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.menu-modal-grid .menu-card {
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.menu-modal-grid .menu-card-head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.menu-modal-grid .border-special {
+  grid-column: 1 / -1;
+}
+
+.menu-modal-grid .border-special .price-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+}
+
+.menu-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(90deg, rgba(17, 16, 13, 0.96), rgba(34, 23, 14, 0.92)),
+    url("Imagens/montagem-preparo-forno.jpg") center / cover;
+  color: var(--text);
+}
+
+.menu-modal-actions span {
+  color: var(--gold-2);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.menu-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(17, 16, 13, 0.86);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.menu-close:hover {
+  background: var(--red);
+}
+
 .site-footer {
   background: var(--bg);
   color: rgba(255, 250, 242, 0.72);
@@ -664,13 +838,19 @@ h1 {
 }
 
 .footer-nav a,
+.footer-nav button,
 .footer-contact a {
   width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: rgba(255, 250, 242, 0.86);
+  cursor: pointer;
   font-weight: 800;
 }
 
 .footer-nav a:hover,
+.footer-nav button:hover,
 .footer-contact a:hover {
   color: var(--gold-2);
 }
@@ -782,7 +962,24 @@ h1 {
   }
 
   .menu-grid,
+  .menu-modal-grid,
   .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-dialog {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-showcase {
+    min-height: 230px;
+  }
+
+  .menu-content {
+    padding: 26px;
+  }
+
+  .menu-modal-grid .border-special .price-list {
     grid-template-columns: 1fr;
   }
 
@@ -855,6 +1052,30 @@ h1 {
   .menu-card-head,
   .price-list li {
     grid-template-columns: 1fr;
+  }
+
+  .menu-modal {
+    padding: 12px;
+  }
+
+  .menu-dialog {
+    max-height: 94svh;
+  }
+
+  .menu-showcase {
+    min-height: 170px;
+  }
+
+  .menu-content {
+    padding: 22px 16px 18px;
+  }
+
+  .menu-title-block h2 {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+
+  .menu-modal-actions .btn {
+    width: 100%;
   }
 
   .menu-card-head {
