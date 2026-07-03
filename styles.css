@@ -945,20 +945,26 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    min-height: auto;
+  }
+
   .hero-content {
     min-height: auto;
-    padding-top: 118px;
-    padding-bottom: 78px;
+    padding-top: 112px;
+    padding-bottom: 58px;
   }
 
   .hero-media img {
-    object-position: 64% center;
+    object-position: 58% center;
+    filter: saturate(1.22) contrast(1.04) brightness(1.08);
   }
 
   .hero-shade {
     background:
-      linear-gradient(90deg, rgba(10, 9, 7, 0.92), rgba(10, 9, 7, 0.5)),
-      linear-gradient(0deg, rgba(10, 9, 7, 0.94), rgba(10, 9, 7, 0) 44%);
+      linear-gradient(90deg, rgba(10, 9, 7, 0.78), rgba(10, 9, 7, 0.24)),
+      linear-gradient(0deg, rgba(10, 9, 7, 0.72), rgba(10, 9, 7, 0.06) 58%),
+      linear-gradient(180deg, rgba(10, 9, 7, 0.36), rgba(10, 9, 7, 0) 32%);
   }
 
   .menu-grid,
@@ -1040,8 +1046,30 @@ body.menu-open {
     width: min(calc(100% - 28px), var(--max));
   }
 
+  .hero-content {
+    padding-top: 98px;
+    padding-bottom: 42px;
+  }
+
   h1 {
-    font-size: clamp(2rem, 8.6vw, 2.7rem);
+    font-size: clamp(1.92rem, 8vw, 2.52rem);
+  }
+
+  .hero-text {
+    margin-bottom: 22px;
+    font-size: 1.02rem;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .intro {
+    padding-top: 56px;
   }
 
   .hero-actions .btn,
