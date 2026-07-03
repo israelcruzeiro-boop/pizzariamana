@@ -863,6 +863,13 @@ body.menu-open {
   text-transform: uppercase;
 }
 
+.footer-contact small {
+  max-width: 240px;
+  color: rgba(255, 250, 242, 0.68);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
