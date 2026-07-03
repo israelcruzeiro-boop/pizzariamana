@@ -4,7 +4,7 @@ Landing page estática da Pizzaria Maná, do pizzaiolo Marcos Gomes de Souza.
 
 ## Conteúdo
 
-- Página principal em `index.html`
+- Página inicial em `index.html`
 - Estilos em `styles.css`
 - Animações leves em `script.js`
 - Imagens e identidade visual em `Imagens/`
