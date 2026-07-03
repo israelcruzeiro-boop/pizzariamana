@@ -21,8 +21,8 @@ window.addEventListener(
   () => {
     const scrolled = window.scrollY > 24;
     header.style.background = scrolled
-      ? "rgba(17, 16, 13, 0.92)"
-      : "rgba(17, 16, 13, 0.78)";
+      ? "rgba(17, 16, 13, 0.94)"
+      : "rgba(17, 16, 13, 0.88)";
   },
   { passive: true }
 );

@@ -78,22 +78,20 @@ a {
 
 .site-header {
   position: fixed;
-  top: 18px;
-  left: 50%;
+  top: 0;
+  left: 0;
   z-index: 40;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  width: min(calc(100% - 32px), var(--max));
+  width: 100%;
   min-height: 60px;
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  background: rgba(17, 16, 13, 0.78);
+  padding: 8px max(18px, calc((100% - var(--max)) / 2));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(17, 16, 13, 0.88);
   color: var(--text);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 16px 54px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(16px);
-  transform: translateX(-50%);
 }
 
 .brand {
@@ -146,7 +144,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: 92svh;
+  min-height: 88svh;
   overflow: hidden;
   background: var(--bg);
   color: var(--text);
@@ -162,16 +160,15 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center right;
-  filter: saturate(1.08) contrast(1.02);
-  transform: scale(1.02);
+  object-position: center;
+  filter: saturate(1.07) contrast(1.03);
 }
 
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(10, 9, 7, 0.9) 0%, rgba(10, 9, 7, 0.72) 36%, rgba(10, 9, 7, 0.1) 72%),
-    linear-gradient(0deg, rgba(10, 9, 7, 0.76) 0%, rgba(10, 9, 7, 0) 34%),
-    linear-gradient(180deg, rgba(10, 9, 7, 0.34) 0%, rgba(10, 9, 7, 0) 28%);
+    linear-gradient(90deg, rgba(10, 9, 7, 0.78) 0%, rgba(10, 9, 7, 0.6) 40%, rgba(10, 9, 7, 0.08) 72%),
+    linear-gradient(0deg, rgba(10, 9, 7, 0.68) 0%, rgba(10, 9, 7, 0) 34%),
+    linear-gradient(180deg, rgba(10, 9, 7, 0.38) 0%, rgba(10, 9, 7, 0) 28%);
 }
 
 .hero-content {
@@ -181,9 +178,9 @@ a {
   grid-template-columns: minmax(0, 660px);
   align-items: center;
   width: min(calc(100% - 40px), var(--max));
-  min-height: 92svh;
+  min-height: 88svh;
   margin: 0 auto;
-  padding: 126px 0 70px;
+  padding: 108px 0 68px;
 }
 
 .eyebrow,
@@ -211,17 +208,17 @@ h2 {
 }
 
 h1 {
-  max-width: 680px;
-  margin-bottom: 18px;
+  max-width: 620px;
+  margin-bottom: 16px;
   color: var(--gold-2);
-  font-size: clamp(2.55rem, 5.2vw, 4.85rem);
+  font-size: clamp(2.35rem, 4.4vw, 4.05rem);
 }
 
 .hero-text {
-  max-width: 560px;
+  max-width: 540px;
   margin-bottom: 26px;
   color: rgba(255, 250, 242, 0.9);
-  font-size: clamp(1.1rem, 2vw, 1.36rem);
+  font-size: clamp(1.03rem, 1.7vw, 1.24rem);
 }
 
 .hero-actions,
@@ -323,6 +320,68 @@ h1 {
   gap: 32px;
   align-items: end;
   margin-bottom: 34px;
+}
+
+.visual-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.62fr);
+  gap: 18px;
+  align-items: stretch;
+  width: min(calc(100% - 40px), var(--max));
+  margin: 0 auto;
+  padding: 18px 0 64px;
+}
+
+.visual-story figure {
+  position: relative;
+  min-width: 0;
+  min-height: 280px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: 0 18px 60px rgba(70, 43, 18, 0.12);
+}
+
+.visual-story img,
+.final-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-story-main {
+  grid-row: span 2;
+  min-height: 480px;
+}
+
+.visual-story-copy {
+  display: grid;
+  align-content: center;
+  padding: 26px;
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.visual-story-copy .section-kicker {
+  color: var(--gold-2);
+}
+
+.visual-story-copy h2 {
+  margin-bottom: 14px;
+  color: var(--gold-2);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.visual-story-copy p {
+  margin-bottom: 0;
+  color: rgba(255, 250, 242, 0.76);
+  font-size: 1.05rem;
+}
+
+.visual-story-side {
+  grid-column: 2;
 }
 
 .section-heading .section-kicker,
@@ -524,7 +583,7 @@ h1 {
 
 .final-cta-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 360px) auto;
   gap: 24px;
   align-items: center;
   width: min(100%, var(--max));
@@ -534,6 +593,14 @@ h1 {
   background: var(--bg);
   color: var(--text);
   box-shadow: var(--shadow);
+}
+
+.final-photo {
+  align-self: stretch;
+  min-height: 150px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .final-cta h2 {
@@ -693,19 +760,24 @@ h1 {
   .hero-content,
   .feature,
   .section-heading,
-  .final-cta-inner {
+  .final-cta-inner,
+  .visual-story {
     grid-template-columns: 1fr;
   }
 
   .hero-content {
     min-height: auto;
-    padding-top: 136px;
+    padding-top: 118px;
     padding-bottom: 78px;
+  }
+
+  .hero-media img {
+    object-position: 64% center;
   }
 
   .hero-shade {
     background:
-      linear-gradient(90deg, rgba(10, 9, 7, 0.94), rgba(10, 9, 7, 0.48)),
+      linear-gradient(90deg, rgba(10, 9, 7, 0.92), rgba(10, 9, 7, 0.5)),
       linear-gradient(0deg, rgba(10, 9, 7, 0.94), rgba(10, 9, 7, 0) 44%);
   }
 
@@ -735,12 +807,21 @@ h1 {
   .final-actions {
     justify-content: flex-start;
   }
+
+  .visual-story-main,
+  .visual-story-side {
+    grid-row: auto;
+    min-height: 340px;
+  }
+
+  .visual-story-side {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 560px) {
   .site-header {
-    top: 10px;
-    width: min(calc(100% - 20px), var(--max));
+    padding: 8px 14px;
   }
 
   .brand {
@@ -763,7 +844,7 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(2.12rem, 10vw, 3rem);
+    font-size: clamp(2rem, 8.6vw, 2.7rem);
   }
 
   .hero-actions .btn,
@@ -786,6 +867,29 @@ h1 {
 
   .final-cta-inner {
     padding: 20px;
+  }
+
+  .final-photo {
+    min-height: 180px;
+  }
+
+  .visual-story {
+    width: min(calc(100% - 28px), var(--max));
+    padding-bottom: 50px;
+  }
+
+  .visual-story-main,
+  .visual-story-side {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .visual-story figure {
+    min-height: 0;
+  }
+
+  .visual-story-copy {
+    padding: 22px;
   }
 
   .footer-bottom {
