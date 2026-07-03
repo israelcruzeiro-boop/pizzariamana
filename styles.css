@@ -754,7 +754,7 @@ body.menu-open {
   border-radius: var(--radius);
   background:
     linear-gradient(90deg, rgba(17, 16, 13, 0.96), rgba(34, 23, 14, 0.92)),
-    url("Imagens/montagem-preparo-forno.jpg") center / cover;
+    url("Imagens/pizza-preparo-gerada.png") center / cover;
   color: var(--text);
 }
 
