@@ -17,6 +17,8 @@
   fallback para movimento reduzido e carregamento interrompido fora da tela.
 - Hero cinematográfica: primeira tela dedicada integralmente ao vídeo; título,
   descrição e ações foram movidos para o bloco seguinte, revelado na rolagem.
+- Mobile: palco do vídeo ajustado para proporção 4:3, removendo a ampliação
+  adicional e reduzindo o recorte excessivo em telas verticais.
 - SEO técnico: domínio `pizzariamanadf.com.br` consolidado em canonical, redes
   sociais e dados estruturados; `robots.txt`, `sitemap.xml` e marcação
   `VideoObject` adicionados.

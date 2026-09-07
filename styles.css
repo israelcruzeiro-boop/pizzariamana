@@ -1429,6 +1429,17 @@ body.menu-open {
     padding: 8px 14px;
   }
 
+  .hero-cinema {
+    min-height: 0;
+    margin-top: 60px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-video {
+    object-position: center;
+    transform: none;
+  }
+
   .brand {
     padding: 0 8px;
     font-size: 0.94rem;
@@ -1458,7 +1469,7 @@ body.menu-open {
   }
 
   .hero-video-toggle {
-    top: 72px;
+    top: 12px;
     right: 14px;
     justify-content: center;
     width: 38px;
@@ -1471,7 +1482,7 @@ body.menu-open {
   }
 
   .hero-scroll-cue {
-    bottom: 20px;
+    bottom: 14px;
   }
 
   h1 {
