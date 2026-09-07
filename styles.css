@@ -248,7 +248,7 @@ h1 {
   max-width: 780px;
   margin-bottom: 0;
   color: var(--gold-2);
-  font-size: clamp(3.15rem, 6.2vw, 6.25rem);
+  font-size: clamp(2.25rem, 3.6vw, 3.85rem);
   letter-spacing: -0.035em;
 }
 
@@ -803,6 +803,73 @@ h1 {
 
 .gallery-item.tall {
   grid-row: span 2;
+}
+
+.motion-gallery {
+  position: relative;
+}
+
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.motion-card {
+  position: relative;
+  min-height: 0;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid rgba(228, 167, 44, 0.2);
+  border-radius: 18px;
+  background: var(--bg);
+  box-shadow: 0 24px 68px rgba(70, 43, 18, 0.16);
+}
+
+.motion-card-featured {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+.motion-card::after {
+  content: "";
+  position: absolute;
+  inset: 38% 0 0;
+  background: linear-gradient(0deg, rgba(8, 7, 6, 0.86), rgba(8, 7, 6, 0));
+  pointer-events: none;
+}
+
+.motion-card video,
+.motion-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.motion-card figcaption {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  left: 22px;
+  z-index: 1;
+  display: grid;
+  gap: 3px;
+  color: var(--text);
+}
+
+.motion-card figcaption span {
+  color: var(--gold-2);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.motion-card figcaption strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.08;
 }
 
 .steps {
@@ -1409,6 +1476,10 @@ body.menu-open {
     max-height: none;
   }
 
+  .motion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .final-actions {
     justify-content: flex-start;
   }
@@ -1486,7 +1557,7 @@ body.menu-open {
   }
 
   h1 {
-    font-size: clamp(2.75rem, 13vw, 4rem);
+    font-size: clamp(2rem, 8.5vw, 2.55rem);
   }
 
   .hero-text {
@@ -1634,6 +1705,20 @@ body.menu-open {
   }
 
   .gallery-item.wide {
+    aspect-ratio: 16 / 10;
+  }
+
+  .motion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .motion-card,
+  .motion-card-featured {
+    grid-column: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .motion-card-featured {
     aspect-ratio: 16 / 10;
   }
 
