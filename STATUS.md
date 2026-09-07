@@ -25,6 +25,6 @@
   sociais e dados estruturados; `robots.txt`, `sitemap.xml` e marcação
   `VideoObject` adicionados.
 - Identidade da marca: favicon próprio para a busca do Google, ícones para
-  dispositivos, manifesto e arte horizontal com a logo para compartilhamentos
-  em WhatsApp e redes sociais adicionados.
+  dispositivos e arte horizontal com a logo para compartilhamentos em WhatsApp
+  e redes sociais adicionados; instalação como aplicativo removida.
 - Produção: publicação não executada neste ciclo.
