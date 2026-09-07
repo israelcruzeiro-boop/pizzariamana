@@ -248,7 +248,7 @@ h1 {
   max-width: 780px;
   margin-bottom: 0;
   color: var(--gold-2);
-  font-size: clamp(2.25rem, 3.6vw, 3.85rem);
+  font-size: clamp(2.5rem, 4.2vw, 4.5rem);
   letter-spacing: -0.035em;
 }
 
